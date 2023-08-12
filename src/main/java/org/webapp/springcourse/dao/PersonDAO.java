@@ -29,11 +29,11 @@ public class PersonDAO {
     }
 
     public void save(Person person) {
-        jdbcTemplate.update("INSERT INTO Person VALUES(?, ?, ?)", person.getFullName(), person.getYearOfBirth());
+        jdbcTemplate.update("INSERT INTO Person(fullName, yearOfBirth) VALUES(?, ?)", person.getFullName(), person.getYearOfBirth());
     }
 
     public void update(int id, Person updatedPerson) {
-        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=? WHERE id=?", updatedPerson.getFullName(),
+        jdbcTemplate.update("UPDATE Person SET fullName=?, yearOfBirth=? WHERE id=?", updatedPerson.getFullName(),
                 updatedPerson.getYearOfBirth(), id);
     }
 
