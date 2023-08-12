@@ -10,7 +10,7 @@ import org.webapp.springcourse.dao.PersonDAO;
 import org.webapp.springcourse.models.Person;
 
 @Controller
-@RequestMapping("/books")
+@RequestMapping("/people")
 public class PeopleController {
 
     private final PersonDAO personDAO;
