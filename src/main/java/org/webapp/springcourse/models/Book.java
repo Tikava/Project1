@@ -10,14 +10,16 @@ public class Book {
     @Size(min = 1, max = 30, message = "Name should be between 1 and 30 chars")
     private String name;
 
-    private Person author;
+    @NotEmpty(message = "Author can not be empty")
+    @Size(min = 1, max = 30, message = "Name should be between 1 and 30 chars")
+    private String author;
 
     @Min(value = 0, message = "Year should be greater than 0")
     private int year;
 
     public Book() {}
 
-    public Book(String name, Person author, int year) {
+    public Book(String name, String author, int year) {
         this.name = name;
         this.author = author;
         this.year = year;
@@ -31,11 +33,11 @@ public class Book {
         this.name = name;
     }
 
-    public Person getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Person author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
